@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <h2>Olá, <span class="userName"></span></h2>
+                <p>Seu saldo atual em conta é de: <span class="userBalance"></span></p>
+            </div>
+
+            <div>
+                <p class="transfer-status"></p>
+                <form action="" class="transfer-form">
+                    <div>
+                        <label for="valueTransfer">Digite o valor a ser transferido: </label>
+                        <input type="number" name="valueTransfer" placeholder="200">
+                    </div>
+
+                    <div>
+                        <label for="descriptionTransfer">Descrição: </label>
+                        <input type="text" name="descriptionTransfer" placeholder="Valor padrão: Transferência padrão">
+                    </div>
+
+                    <button type="submit">Transferir</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/transaction.js"></script>
+    <script src="./js/transfer.js"></script>
+</body>
+</html>

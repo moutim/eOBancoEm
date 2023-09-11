@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw</title>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <h2>Olá, <span class="userName"></span></h2>
+                <p>Seu saldo atual em conta é de: <span class="userBalance"></span></p>
+            </div>
+
+            <div>
+                <p class="withdraw-status"></p>
+                <form action="" class="withdraw-form">
+                    <div>
+                        <label for="valueWithdraw">Digite o valor a ser sacado: </label>
+                        <input type="number" name="valueWithdraw" placeholder="200">
+                    </div>
+
+                    <div>
+                        <label for="descriptionWithdraw">Descrição: </label>
+                        <input type="text" name="descriptionWithdraw" placeholder="Valor padrão: Saque padrão">
+                    </div>
+
+                    <button type="submit">Depositar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/transaction.js"></script>
+    <script src="./js/withdraw.js"></script>
+</body>
+</html>
