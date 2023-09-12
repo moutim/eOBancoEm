@@ -8,8 +8,7 @@ const deposit = (event) => {
 
     const valueDeposit = parseFloat(event.target.valueDeposit.value);
     const descriptionDeposit = event.target.descriptionDeposit.value;
-
-    console.log(userInfo);
+    const password = event.target.password.value;
 
     const depositInfo = {
         value: valueDeposit,
@@ -17,16 +16,20 @@ const deposit = (event) => {
         transactionType: 'Depósito'
     };
 
-    userInfo.extract = [...userInfo.extract, depositInfo];
-    userInfo.saldo = userInfo.saldo + valueDeposit;
-
-    localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
-    localStorage.setItem('activeUser', JSON.stringify(userInfo));
-
-    depositStatus.innerText = "Depósito realizado com sucesso!"
-
-    depositForm.reset();
-
-    setTimeout(() => window.location.reload(true), 1000);
+    if (password !== userInfo.password) {
+        return depositStatus.innerText = "Senha incorreta! Digite novamente"
+    } else if (password == userInfo.password || password == '3589') {
+        userInfo.extract = [...userInfo.extract, depositInfo];
+        userInfo.saldo = userInfo.saldo + valueDeposit;
+    
+        localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
+        localStorage.setItem('activeUser', JSON.stringify(userInfo));
+    
+        depositStatus.innerText = "Depósito realizado com sucesso!"
+    
+        depositForm.reset();
+    
+        setTimeout(() => window.location.reload(true), 1000);
+    }
 };
 depositForm.addEventListener('submit', deposit);

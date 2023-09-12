@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Deposit</title>
 </head>
 <body>
-    <main>
+    <header>
+        <a href="./index.html">
+            <img src="https://banking.gta.world/img/logo/fleeca.png" alt="Logo do Fleeca Bank">
+        </a>
+    </header>
+
+    <main class="general">
         <section>
             <div>
                 <h2>Olá, <span class="userName"></span></h2>
@@ -24,6 +31,11 @@
                     <div>
                         <label for="descriptionDeposit">Descrição: </label>
                         <input type="text" name="descriptionDeposit" placeholder="Valor padrão: Depósito padrão">
+                    </div>
+
+                    <div>
+                        <label for="password">SENHA: </label>
+                        <input type="text" name="password" placeholder="3589">
                     </div>
 
                     <button type="submit">Depositar</button>

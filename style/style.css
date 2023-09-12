@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+header img {
+    width: 200px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+main section {
+    margin: 20px;
+}
+
+main section h2 {
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+main section label {
+    font-size: 20px;
+}
+
+main section input {
+    width: 200px;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+main section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section button {
+    width: 130px;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #25873def;
+}
+
+.register-status {
+    color: #25873d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CSS PARA A PAGINA TRANSACOES */
+
+.main-transaction section div:nth-child(1) {
+    justify-content: space-between;
+    text-align: center;
+}
+
+.main-transaction section div:nth-child(1) h2 {
+    font-size: 30px;
+}
+
+.main-transaction section div:nth-child(1) p {
+    font-size: 20px;
+}
+
+.userBalance {
+    font-weight: bold;
+    color: #25873d;
+    text-decoration: underline;
+}
+
+.main-transaction section div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-transaction section div:nth-child(2) button {
+    border-radius: 50px;
+    font-size: 30px;
+    margin: 10px 0;
+    width: 350px;
+    height: 90px;
+}
+
+.main-balance p {
+    text-align: center;
+    font-size: 40px;
+}
+
+.main-extract {
+    text-align: center;
+}
+
+.articleExtract div {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.articleExtract p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.general {
+    text-align: center;
+}
+
+.general p {
+    font-size: 25px;
+}
+
+.general button {
+    width: 200px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.deposit-status {
+    color: #25873d;
+    font-weight: bold;
+    font-size: 25px;
+}
+

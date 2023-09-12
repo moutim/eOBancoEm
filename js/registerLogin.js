@@ -8,12 +8,19 @@ const register = (event) => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    const userInfo = { name, email, password, saldo: 0, extract: [{ value: 39.90, description: 'Date com a Camile',
-        transactionType: 'Pix'}] };
+    const userInfo = { 
+        name,
+        email,
+        password,
+        saldo: 777,
+        extract: [{ value: 39.90, description: 'Date com a Camile', transactionType: 'Pix'}] 
+    };
 
     localStorage.setItem(email, JSON.stringify(userInfo));
 
     registerStatus.innerHTML = "Cadastro realizado com sucesso!";
+
+    formRegister.reset();
 };
 formRegister.addEventListener('submit', register);
 

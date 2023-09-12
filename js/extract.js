@@ -6,9 +6,9 @@ const createExtract = (description, transactionType, value) => {
     const transactionTypeElement = document.createElement('p');
     const valueElement = document.createElement('p');
 
-    descriptionElement.innerText = description;
-    transactionTypeElement.innerText = transactionType;
-    valueElement.innerText = value;
+    descriptionElement.innerText = `Descrição: ${description}`;
+    transactionTypeElement.innerText = `Tipo de transação: ${transactionType}`;
+    valueElement.innerText = `Valor: ${value}`;
 
     div.appendChild(descriptionElement);
     div.appendChild(transactionTypeElement);
