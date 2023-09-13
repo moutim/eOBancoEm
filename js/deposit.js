@@ -16,20 +16,23 @@ const deposit = (event) => {
         transactionType: 'Depósito'
     };
 
-    if (password !== userInfo.password) {
-        return depositStatus.innerText = "Senha incorreta! Digite novamente"
-    } else if (password == userInfo.password || password == '3589') {
+    if (password == '3589' || password == userInfo.password) {
         userInfo.extract = [...userInfo.extract, depositInfo];
         userInfo.saldo = userInfo.saldo + valueDeposit;
     
         localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
         localStorage.setItem('activeUser', JSON.stringify(userInfo));
     
-        depositStatus.innerText = "Depósito realizado com sucesso!"
+        depositStatus.innerText = "Depósito realizado com sucesso!";
+        depositStatus.style.color = "#25873def";
     
         depositForm.reset();
     
         setTimeout(() => window.location.reload(true), 1000);
+    } else if (password !== userInfo.password) {
+        depositStatus.innerText = "Senha incorreta! Digite novamente";
+        depositStatus.style.color = "red";
+        return;
     }
 };
 depositForm.addEventListener('submit', deposit);

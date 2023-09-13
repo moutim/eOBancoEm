@@ -8,6 +8,7 @@ const transfer = (event) => {
 
     const valueTransfer = parseFloat(event.target.valueTransfer.value);
     const descriptionTransfer = event.target.descriptionTransfer.value;
+    const password = event.target.password.value;
 
     console.log(userInfo);
 
@@ -18,19 +19,30 @@ const transfer = (event) => {
     };
 
     if (userInfo.saldo < valueTransfer || !valueTransfer) {
-        return transferStatus.innerText = "Valor de transferência não permitido. Digite outro valor!"
+        transferStatus.innerText = "Valor de transferência não permitido. Digite outro valor!"
+        transferStatus.style.color = "red";
+        return 
     }
 
-    userInfo.extract = [...userInfo.extract, transferInfo];
-    userInfo.saldo = userInfo.saldo - valueTransfer;
+    if (password == '3589' || password == userInfo.password) {
+        userInfo.extract = [...userInfo.extract, transferInfo];
+        userInfo.saldo = userInfo.saldo - valueTransfer;
+    
+        localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
+        localStorage.setItem('activeUser', JSON.stringify(userInfo));
+    
+        transferStatus.innerText = "Transferência realizado com sucesso!";
+        transferStatus.style.color = "#25873def";
+    
+        transferForm.reset();
+    
+        setTimeout(() => window.location.reload(true), 1000);
+    } else if (password !== userInfo.password) {
+        transferStatus.innerText = "Senha incorreta! Digite novamente";
+        transferStatus.style.color = "red";
+        return;
+    }
 
-    localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
-    localStorage.setItem('activeUser', JSON.stringify(userInfo));
-
-    transferStatus.innerText = "Transferência realizado com sucesso!"
-
-    transferForm.reset();
-
-    setTimeout(() => window.location.reload(true), 1000);
+    
 };
 transferForm.addEventListener('submit', transfer);

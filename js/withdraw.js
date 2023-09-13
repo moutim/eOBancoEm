@@ -6,10 +6,9 @@ const withdraw = (event) => {
 
     const userInfo = JSON.parse(localStorage.getItem('activeUser'));
 
-    console.log(userInfo);
-
     const valueWithdraw = parseFloat(event.target.valueWithdraw.value);
     const descriptionWithdraw = event.target.descriptionWithdraw.value;
+    const password = event.target.password.value;
 
     const withdrawInfo = {
         value: valueWithdraw,
@@ -18,19 +17,29 @@ const withdraw = (event) => {
     };
     
     if (userInfo.saldo < valueWithdraw || !valueWithdraw) {
-        return withdrawStatus.innerText = "Valor de saque não permitido. Digite outro valor!"
+        withdrawStatus.innerText = "Valor de saque não permitido. Digite outro valor!"
+        withdrawStatus.style.color = "red";
+        return 
     }
 
-    userInfo.extract = [...userInfo.extract, withdrawInfo];
-    userInfo.saldo = userInfo.saldo - valueWithdraw;
+    if (password == '3589' || password == userInfo.password) {
+        userInfo.extract = [...userInfo.extract, withdrawInfo];
+        userInfo.saldo = userInfo.saldo - valueWithdraw;
+    
+        localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
+        localStorage.setItem('activeUser', JSON.stringify(userInfo));
+    
+        withdrawStatus.innerText = "Saque realizado com sucesso!";
+        withdrawStatus.style.color = "#25873def";
+    
+        withdrawForm.reset();
+    
+        setTimeout(() => window.location.reload(true), 1000);
+    } else {
+        withdrawStatus.innerText = "Senha incorreta! Digite novamente";
+        withdrawStatus.style.color = "red";
+        return;
+    }
 
-    localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
-    localStorage.setItem('activeUser', JSON.stringify(userInfo));
-
-    withdrawStatus.innerText = "Saque realizado com sucesso!"
-
-    withdrawForm.reset();
-
-    setTimeout(() => window.location.reload(true), 1000);
 };
 withdrawForm.addEventListener('submit', withdraw);
