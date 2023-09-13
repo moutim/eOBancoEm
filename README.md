@@ -12,6 +12,6 @@ O projeto possui as seguintes funcionalidades:
 * Transferência: Realiza transferência, desde que haja saldo disponível.
 
 ## Deploy da aplicação
-[Deploy feito pelo GitHub Pages]([https://moutim.github.io/Daily-Bugle-PROA/index.html](https://moutim.github.io/eOBancoEm/index.html)https://moutim.github.io/eOBancoEm/index.html)
+[Deploy feito pelo GitHub Pages](https://moutim.github.io/eOBancoEm/index.html)
 
 ![preview.png](./preview.png)
