@@ -12,6 +12,6 @@ O projeto possui as seguintes funcionalidades:
 * Transferência: Realiza transferência, desde que haja saldo disponível.
 
 ## Deploy da aplicação
-[Deploy feito pelo GitHub Pages](https://moutim.github.io/eOBancoEm/index.html)
+[Deploy feito pelo GitHub Pages](https://formas-geometricas.vercel.app/)
 
 ![preview.png](./preview.png)
